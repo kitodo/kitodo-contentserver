@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- TODO: Reference Schema here and remove reference to DTD -->
+<!--
+    new version; paragraphs aren't empty elements any more
+-->
+<!--
+<!DOCTYPE pdftitlepage PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+                         "http://dz-srv1.sub.uni-goettingen.de:8080/sub/pdftitlepage.dtd">
+-->
+<!-- http://dz-srv1.sub.uni-goettingen.de:8080/sub/digbib/showpdftitle?did=D51260 Link auf Monographie -->
+<!-- http://dz-srv1.sub.uni-goettingen.de:8080/sub/digbib/showpdftitle?did=D637 Link auf Chapter einer Monographie --> 
+<!-- examples for the use of the fo leader -->
+<pdftitlepage>
+
+    <pagemargins marginLeft="0" marginRight="0" marginTop="0" marginBottom="0" />
+
+    <!-- get all parents -->
+    <!--  <parenttype>Monograph</parenttype> -->
+    <!-- usually line1 contains the title of the selected document - this is the title of the chapter, the article or if the whole monograph was selected, the title of the monograph -->
+    <!--   <line1>Reformation in Hamburg</line1> -->
+    <!-- line 2 contains the creator of the document -->
+    <!--   <line2 type="parent">Leopold Kist</line2> -->
+    <!-- line 3 contains the title of the parent, in which the selected document is contained title of monograph, periodical etc... Besides just the title, volume and issues numbers can be display here-->
+    <!--   <line3>in: Amerikanisches </line3> -->
+    <!-- line4 contains the pages; from and until -->
+    <!--   <line4>pp. 15 - 27</line4> -->
+    <termsconditions title="Terms and Conditions">
+      <p size="9">Publikationserlaubnis</p>
+      <p>  </p>
+      <p size="9">Die Erlaubnis zur Einsicht in die handschriftlichen Materialien schließt nicht die Erlaubnis zu deren Veröffentlichung ein. Diese bedarf der Zustimmung der Bibliothek. Bei jeder beabsichtigten Veröffentlichung oder bildliche Wiedergabe in gedruckten wie auch elektronischen Medien wird der Benutzer nachdrücklich gebeten, das Vorhaben jeweils vorher schriftlich mitzuteilen. Dies gilt auch für jede kommerzielle Verwendung. Für die Wahrung aller an einzelnen Objekten etwa bestehenden Urheber- und Persönlichkeitsrechte trägt der Benutzer selbst die Verantwortung. Die Handschriften, Autographen und Nachlässe sind mit ihren vollständigen Signaturen und der Besitzangabe „Universitätsbibliothek Kiel“ zu  zitieren.</p>
+      <p size="9">Bei Nutzung unserer alten Drucke für eine gedruckte oder elektronische Publikation ist die „Universitätsbibliothek Kiel“ als Besitzerin der im Internet abgebildeten Objekte zu benennen.</p>
+      <p size="9">Wir bitten Sie, bei Nutzung unserer digitalisierten Bestände für Publikationszwecke ein Exemplar der Veröffentlichung als Beleg an die Bibliothek abzugeben.</p> 
+      <p>      </p>
+      <p size="9">Terms of use for the Digital Collections</p>
+      <p>    </p>
+      <p size="9">Kiel University Library offers its Digital Collections free of charge for non-commercial research and teaching purposes.</p>
+      <p>  </p>
+      <p size="9">Publication regulations </p>
+      <p size="9">Please note that the permission to consult materials of our manuscript collection does not include the permission to publish them. Any publication requires Kiel University Library’s consent. In case you would like to publish any of our materials we strongly ask you to notify us in advance (written form required). This holds true for both textual and visual reproductions in printed as well as electronic documents. The policy applies to all kinds of purposes, especially any commercial purposes you might pursue. It is the recipient’s obligation to maintain any copyrights and personal rights that might exist. All reproductions of our manuscripts, autographs and literary estates have to be cited with their entire call number and the credit line “Kiel University Library”. </p>
+      <p>  </p>
+      <p size="9">When using parts of our digitized old and rare books for a publication (whether in printed or electronic form) it is compulsory that „Kiel University Library“ is cited as the copyright holder of the objects displayed on our website. </p>
+      <p size="9">In this case we kindly ask you to submit us a voucher copy of your publication.  </p>
+
+        <p size="9">Contact:</p>
+        <p size="9">Universitaetsbibliothek XY</p>
+        <p size="9">Musterstraße. 9</p>
+        <p size="9">12345 Musterstadt</p>
+        <p size="9">Germany</p>
+        <p size="9">Email: auskunft@example.com</p> 
+    </termsconditions>
+</pdftitlepage>

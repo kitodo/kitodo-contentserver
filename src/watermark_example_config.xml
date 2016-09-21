@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<watermark width="500" height="80" color="CCCCCC">
+ <!--     <box id="5" x="30" y="50" height="65" width="180" color="555555"/>-->
+    <image id="1" x="0" y="0" origin="left" url="http://localhost:8080/ics/images/watermark/background_red.jpg"/>
+    <image id="2" x="15" y="15" origin="left" url="http://localhost:8080/ics/images/watermark/intranda.png"/>
+    <image id="3" x="15" y="25" origin="right" url="http://localhost:8080/ics/images/watermark/dfg.png"/>
+    <text id="4" y="50" fontname="Arial" fontsize="20" fontcolor="CCCCCC" origin="center">Beispieltext</text>
+</watermark>

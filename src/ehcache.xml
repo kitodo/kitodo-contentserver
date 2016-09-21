@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ehcache name="ColorCache">
+
+<!-- 	
+ -->
+	<diskStore path="/opt/digiverso/viewer/cache/" />
+ 
+	<defaultCache maxEntriesLocalHeap="10" eternal="false"
+		timeToIdleSeconds="120" timeToLiveSeconds="120" overflowToDisk="true"
+		maxEntriesLocalDisk="10000000" diskPersistent="false"
+		diskExpiryThreadIntervalSeconds="120" memoryStoreEvictionPolicy="LRU" />
+
+	<cache name="pdf" maxElementsInMemory="2" maxElementsOnDisk="100"
+		eternal="false" timeToIdleSeconds="120" timeToLiveSeconds="0"
+		memoryStoreEvictionPolicy="LFU">
+	</cache>
+
+	<cache name="content" maxEntriesLocalHeap="10000" eternal="false"
+		timeToIdleSeconds="120" timeToLiveSeconds="120" overflowToDisk="true"
+		maxEntriesLocalDisk="10000000" diskPersistent="true"
+		diskExpiryThreadIntervalSeconds="120" memoryStoreEvictionPolicy="LRU">
+	</cache>
+
+	<cache name="thumbnails" maxElementsInMemory="100"
+		maxElementsOnDisk="100" eternal="false" timeToIdleSeconds="120"
+		timeToLiveSeconds="0" memoryStoreEvictionPolicy="LFU">
+	</cache>
+
+</ehcache>

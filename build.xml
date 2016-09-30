@@ -20,12 +20,10 @@
 
     <!-- normally overridden in build.properties -->
     <property name="build.tomcat.dir.lib" value="${dir.lib}" />
-    <property name="build.jre.dir.lib" value="${dir.lib}" />
 
     <path id="compile.classpath">
         <fileset dir="${dir.lib}" />
         <fileset dir="${build.tomcat.dir.lib}" />
-        <fileset dir="${build.jre.dir.lib}" />
         <pathelement location="${build.servlet.jar}" />
         <pathelement path="${java.class.path}" />
     </path>

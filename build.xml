@@ -22,10 +22,12 @@
     <property name="build.tomcat.dir.lib" value="${dir.lib}" />
     <property name="build.jre.dir.lib" value="${dir.lib}" />
 
-    <path id="classpath">
+    <path id="compile.classpath">
         <fileset dir="${dir.lib}" />
         <fileset dir="${build.tomcat.dir.lib}" />
         <fileset dir="${build.jre.dir.lib}" />
+        <pathelement location="${build.servlet.jar}" />
+        <pathelement path="${java.class.path}" />
     </path>
 
     <target name="all" depends="jar" />
@@ -33,6 +35,20 @@
     <target name="clean">
         <delete dir="${build.dir}" />
         <delete dir="${dist.dir}" />
+    </target>
+
+    <target name="checkServletClassPath">
+        <condition property="servletapi.present">
+            <available classname="javax.servlet.http.HttpServlet" classpathref="compile.classpath" />
+        </condition>
+    </target>
+
+    <target name="checkConditions" depends="checkServletApi" />
+
+    <target name="checkServletApi" depends="checkServletClassPath" unless="servletapi.present">
+        <echo>Servlet API not found on classpath!</echo>
+        <echo>run this build file via "ant -lib /path/to/servlet-api.jar or set build.tomcat.dir.lib property"</echo>
+        <fail message="Servlet API is missing."/>
     </target>
 
     <target name="copyAdditionalNonJavaFiles">
@@ -49,15 +65,15 @@
     </target>
 
     <!-- jar build process -->
-    <target name="jar" depends="createDirectories, copyAdditionalNonJavaFiles">
+    <target name="jar" depends="checkConditions, createDirectories, copyAdditionalNonJavaFiles">
         <echo>compile sources</echo>
         <javac destdir="build"
-            includeantruntime="false"
+            includeAntRuntime="false"
             encoding="UTF-8"
             debug="true"
-            debuglevel="lines,vars,source">
-            <classpath refid="classpath" />
-            <src path="${src.dir}" />
+            debuglevel="lines,vars,source"
+            classpathref="compile.classpath"
+            srcdir="${src.dir}">
         </javac>
         <echo>generate jar file</echo>
         <jar destfile="${dist.dir}/${jarfile}">

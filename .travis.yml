@@ -11,4 +11,4 @@ cache:
 
 env:
 
-script: ant -lib /usr/share/tomcat7/lib:/usr/lib/jvm/default-java/jre/lib all
+script: ant -lib /usr/share/tomcat7/lib all

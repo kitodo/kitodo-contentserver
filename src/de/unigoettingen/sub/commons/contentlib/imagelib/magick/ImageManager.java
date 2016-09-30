@@ -27,10 +27,7 @@ package de.unigoettingen.sub.commons.contentlib.imagelib.magick;
 
 import java.awt.Color;
 import java.awt.image.RenderedImage;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.*;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.HashMap;
@@ -44,8 +41,6 @@ import magick.MagickException;
 import magick.MagickImage;
 
 import org.apache.log4j.Logger;
-
-import com.sun.xml.internal.messaging.saaj.util.ByteInputStream;
 
 import de.unigoettingen.sub.commons.contentlib.exceptions.ImageManagerException;
 import de.unigoettingen.sub.commons.contentlib.exceptions.ImageManipulatorException;
@@ -475,7 +470,7 @@ public class ImageManager {
         // Create RenderedImage from MagickImage
         try {
             byte[] imageBlob = outImage.imageToBlob(imageInfo);
-            InputStream iStream = new ByteInputStream(imageBlob, imageBlob.length);
+            InputStream iStream = new ByteArrayInputStream(imageBlob, 0, imageBlob.length);
             RenderedImage riImage = ImageIO.read(iStream);
             return riImage;
         } catch (IOException e) {

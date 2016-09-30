@@ -1,46 +1,68 @@
 <?xml version="1.0"?>
 
-<project name="basic command plugins" basedir="." default="deploy">
+<project name="basic command plugins" default="all">
 
-	<!-- ================================= 
-	          properties             
-	 ================================= -->
-	<property name="jarfile" value="ics1.1.jar" />
-	<property name="pluginFolderWin" value="C:/Goobi/" />
-	<property name="pluginFolderMac" value="/opt/digiverso/" />
-	<property name="dir.lib" value="./WebContent/WEB-INF/lib" />
-	
-	<path id="classpath">
-		<fileset dir="${dir.lib}" />
-		<fileset dir="/opt/digiverso/libs" />
-	</path>
 
-	<!-- ================================= 
-         targets: compile and jar          
-	 ================================= -->
-	<target name="jar">
-		<echo>compile sources</echo>
-		<javac destdir="build">
-			<classpath refid="classpath" />
-			<src path="src" />
-		</javac>
-		<echo>generate jar file</echo>
-		<jar destfile="${jarfile}">
-			<fileset dir="build" />
-		</jar>
-	</target>
-	
-	<path id="classpath">
-		<fileset dir="${dir.lib}" />
-		<fileset dir="/opt/digiverso/libs" />
-	</path>
-	
-	<!-- ================================= 
-	          target: deploy 
-         ================================= -->
-	<target name="deploy" depends="jar">
-		<echo>intranda ... alles ist gut!</echo>
-	</target>
-	
+    <!-- Include build and deployment options -->
+    <property file="build.properties" prefix="build"/>
+
+    <property name="build.dir" value="build" />
+
+    <property name="build.dist.name" value="ics" />
+    <property name="build.dist.version" value="1.1.5" />
+
+    <property name="dist.dir" value="dist" />
+
+    <property name="jarfile" value="${build.dist.name}-${build.dist.version}.jar" />
+    <property name="dir.lib" value="${basedir}/WebContent/WEB-INF/lib" />
+
+    <property name="src.dir" value="${basedir}/src" />
+
+    <!-- normally overridden in build.properties -->
+    <property name="build.tomcat.dir.lib" value="${dir.lib}" />
+    <property name="build.jre.dir.lib" value="${dir.lib}" />
+
+    <path id="classpath">
+        <fileset dir="${dir.lib}" />
+        <fileset dir="${build.tomcat.dir.lib}" />
+        <fileset dir="${build.jre.dir.lib}" />
+    </path>
+
+    <target name="all" depends="jar" />
+
+    <target name="clean">
+        <delete dir="${build.dir}" />
+        <delete dir="${dist.dir}" />
+    </target>
+
+    <target name="copyAdditionalNonJavaFiles">
+        <copy todir="${build.dir}">
+            <fileset dir="${src.dir}">
+                <exclude name="**/*.java" />
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="createDirectories">
+        <mkdir dir="${build.dir}" />
+        <mkdir dir="${dist.dir}" />
+    </target>
+
+    <!-- jar build process -->
+    <target name="jar" depends="createDirectories, copyAdditionalNonJavaFiles">
+        <echo>compile sources</echo>
+        <javac destdir="build"
+            includeantruntime="false"
+            encoding="UTF-8"
+            debug="true"
+            debuglevel="lines,vars,source">
+            <classpath refid="classpath" />
+            <src path="${src.dir}" />
+        </javac>
+        <echo>generate jar file</echo>
+        <jar destfile="${dist.dir}/${jarfile}">
+            <fileset dir="${build.dir}" />
+        </jar>
+    </target>
+
 </project>
-

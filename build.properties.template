@@ -1,3 +1,5 @@
 # This file is part of Kitodo.ContentServer
 
+#java.source=1.7
+#java.target=1.7
 tomcat.dir.lib=/usr/share/tomcat7/lib

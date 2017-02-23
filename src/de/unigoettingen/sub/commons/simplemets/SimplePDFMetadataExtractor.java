@@ -206,8 +206,8 @@ public class SimplePDFMetadataExtractor implements MetadataExtractor {
 
                 // check mptr
                 List<Mptr> metspointer = parentDiv.getMptrList();
-                if (metspointer.isEmpty()) {
-                    // its a volume; there must only be a single metspointer
+                if (!metspointer.isEmpty()) {
+                    // it's a volume; there must only be a single metspointer
                     // element
                     this.calculateLinesForVolume(metspointer.get(0), metsparser);
                 } else {

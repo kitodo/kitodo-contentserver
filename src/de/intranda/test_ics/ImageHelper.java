@@ -1,9 +1,9 @@
 /*
  * This file is part of the ContentServer project.
  * Visit the websites for more information. 
- * 		- http://gdz.sub.uni-goettingen.de 
- * 		- http://www.intranda.com 
- * 		- http://www.digiverso.com
+ *         - http://gdz.sub.uni-goettingen.de 
+ *         - http://www.intranda.com 
+ *         - http://www.digiverso.com
  * 
  * Copyright 2009, Center for Retrospective Digitization, Göttingen (GDZ),
  * intranda software
@@ -488,15 +488,15 @@ public class ImageHelper {
     // public static void main(String[] args) {
     // long startMillis = System.currentTimeMillis();
     //
-    //		System.out.println("START"); //$NON-NLS-1$
+    //        System.out.println("START"); //$NON-NLS-1$
     //
-    //		String path = "C:\\Users\\Karsten\\Desktop\\testbilder\\00000006.tif"; //$NON-NLS-1$
-    //		//String targetpath = "C:\\Users\\Karsten\\Desktop\\testbilder\\00000006_contentserver.tif"; //$NON-NLS-1$
+    //        String path = "C:\\Users\\Karsten\\Desktop\\testbilder\\00000006.tif"; //$NON-NLS-1$
+    //        //String targetpath = "C:\\Users\\Karsten\\Desktop\\testbilder\\00000006_contentserver.tif"; //$NON-NLS-1$
     //
     // ImageManager imageManager = openImage(path);
     //
     // long stopMillis = System.currentTimeMillis();
-    //		System.out.println("OPEN:" + (stopMillis - startMillis)); //$NON-NLS-1$
+    //        System.out.println("OPEN:" + (stopMillis - startMillis)); //$NON-NLS-1$
     // startMillis = System.currentTimeMillis();
     //
     // RenderedImage renderedImage = rotateImage(imageManager, 90);
@@ -511,7 +511,7 @@ public class ImageHelper {
     // System.out.println(renderedImage.getSampleModel());
     //
     // stopMillis = System.currentTimeMillis();
-    //		System.out.println("SCALED:" + (stopMillis - startMillis)); //$NON-NLS-1$
+    //        System.out.println("SCALED:" + (stopMillis - startMillis)); //$NON-NLS-1$
     // startMillis = System.currentTimeMillis();
     //
     // //BufferedImage bum =
@@ -521,7 +521,7 @@ public class ImageHelper {
     // //writeTIFFImage(renderedImage, targetpath);
     //
     // stopMillis = System.currentTimeMillis();
-    //		System.out.println("WRITTEN:" + (stopMillis - startMillis)); //$NON-NLS-1$
+    //        System.out.println("WRITTEN:" + (stopMillis - startMillis)); //$NON-NLS-1$
     // }
 
     public static void main(String[] args) {

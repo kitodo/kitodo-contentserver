@@ -3,7 +3,7 @@
 <%@ page import="java.util.Enumeration"%>
 
 <%
-	request.setAttribute("page", "echo");
+    request.setAttribute("page", "echo");
 %>
 
 
@@ -11,14 +11,14 @@
 
 <div id="main">
 <%
-	Enumeration<String> errors = request.getAttributeNames();
-	while (errors.hasMoreElements()) {
-		String label = (String) errors.nextElement();
-		Object value = request.getAttribute(label);
-		if (label.equals("error")) {
-			out.print("<p style=\"color:red;font-weight:bold\">" + value + "</p>");
-		}
-	}
+    Enumeration<String> errors = request.getAttributeNames();
+    while (errors.hasMoreElements()) {
+        String label = (String) errors.nextElement();
+        Object value = request.getAttribute(label);
+        if (label.equals("error")) {
+            out.print("<p style=\"color:red;font-weight:bold\">" + value + "</p>");
+        }
+    }
 %>
 
 <h2 id="echo">Action: Echo</h2>
@@ -28,19 +28,19 @@
 <h2 id="table">Parameter</h2>
 
 <table>
-	<tr>
-		<th>type</th>
-		<th>content</th>
-	</tr>
+    <tr>
+        <th>type</th>
+        <th>content</th>
+    </tr>
 
-	<%
-		Enumeration<String> params = request.getParameterNames();
-		while (params.hasMoreElements()) {
-			String label = (String) params.nextElement();
-			Object value = request.getParameter(label);
-			out.print("<tr class=\"row-b\"><td>" + label + "</td><td>" + value + "</td></tr>");
-		}
-	%>
+    <%
+        Enumeration<String> params = request.getParameterNames();
+        while (params.hasMoreElements()) {
+            String label = (String) params.nextElement();
+            Object value = request.getParameter(label);
+            out.print("<tr class=\"row-b\"><td>" + label + "</td><td>" + value + "</td></tr>");
+        }
+    %>
 
 </table>
 
@@ -50,8 +50,8 @@
 
 <h3>Content</h3>
 <ul class="sidemenu">
-	<li><a href="#echo">Action: Echo</a></li>
-	<li><a href="#table">Parameter</a></li>
+    <li><a href="#echo">Action: Echo</a></li>
+    <li><a href="#table">Parameter</a></li>
 </ul>
 
 <!-- sidebar ends --></div>

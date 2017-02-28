@@ -1,9 +1,9 @@
 /*
  * This file is part of the ContentServer project.
  * Visit the websites for more information. 
- * 		- http://gdz.sub.uni-goettingen.de 
- * 		- http://www.intranda.com 
- * 		- http://www.digiverso.com
+ *         - http://gdz.sub.uni-goettingen.de 
+ *         - http://www.intranda.com 
+ *         - http://www.digiverso.com
  * 
  * Copyright 2009, Center for Retrospective Digitization, Göttingen (GDZ),
  * intranda software

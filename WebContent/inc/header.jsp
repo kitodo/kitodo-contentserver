@@ -18,18 +18,18 @@
 <!-- navigation starts-->
 <div id="nav">
 <ul>
-	<li
-		<%out.println(request.getAttribute("page").equals("echo") ? " id=\"current\"" : "");%>><a
-		href="echo.jsp">Echo</a></li>
-	<li
-		<%out.println(request.getAttribute("page").equals("help") ? " id=\"current\"" : "");%>><a
-		href="help.jsp">Help</a></li>
-	<li
-		<%out.println(request.getAttribute("page").equals("helpCs") ? " id=\"current\"" : "");%>><a
-		href="helpCs.jsp">Help CS</a></li>
-	<li
-		<%out.println(request.getAttribute("page").equals("about") ? " id=\"current\"" : "");%>><a
-		href="about.jsp">About</a></li>
+    <li
+        <%out.println(request.getAttribute("page").equals("echo") ? " id=\"current\"" : "");%>><a
+        href="echo.jsp">Echo</a></li>
+    <li
+        <%out.println(request.getAttribute("page").equals("help") ? " id=\"current\"" : "");%>><a
+        href="help.jsp">Help</a></li>
+    <li
+        <%out.println(request.getAttribute("page").equals("helpCs") ? " id=\"current\"" : "");%>><a
+        href="helpCs.jsp">Help CS</a></li>
+    <li
+        <%out.println(request.getAttribute("page").equals("about") ? " id=\"current\"" : "");%>><a
+        href="about.jsp">About</a></li>
 </ul>
 <!-- navigation ends--></div>
 

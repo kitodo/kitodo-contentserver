@@ -9,6 +9,10 @@ addons:
 
 cache:
 
+jdk:
+  - oraclejdk7
+  - openjdk7
+
 env:
 
 script: ant -lib /usr/share/tomcat7/lib all

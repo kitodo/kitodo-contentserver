@@ -1,17 +1,22 @@
-# Travis continuous integration for kitodo-contentserver
+# Travis continuous integration for Kitodo.Contentserver
+
+dist: trusty
+
+sudo: required
 
 language: java
+
+jdk:
+  - oraclejdk8
+  - openjdk8
 
 addons:
   apt:
     packages:
+      - ant-optional
       - tomcat7-common
 
 cache:
-
-jdk:
-  - oraclejdk7
-  - openjdk7
 
 env:
 

@@ -126,7 +126,7 @@ public class ImageManager {
             this.myInterpreter = ImageFileFormat.getInterpreter(url, httpproxyhost, httpproxyport, httpproxyuser, httpproxypassword);
             LOGGER.debug("url: " + url);
         } catch (Exception e) {
-            LOGGER.error("Error while getting ImageInterpreter");
+            LOGGER.error("Error while getting ImageInterpreter. Reason: " + e.getMessage());
             throw new ImageManagerException(e);
         }
 

@@ -34,8 +34,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-import org.apache.log4j.helpers.Loader;
-
 /************************************************************************************
  * The Class Helper for some repeating simple tasks like getExtensionFromFileName etc.
  * 
@@ -80,13 +78,29 @@ public class ContentLibUtil {
      ************************************************************************************/
     public static File getBaseFolderAsFile() {
         File basefolder;
-        // TODO: GDZ: Do wee really need to depend on Log4J here? I don't think so...
-        URL url = Loader.getResource("");
+        URL url = getResource("");
         try {
             basefolder = new File(url.toURI());
         } catch (URISyntaxException ue) {
             basefolder = new File(url.getPath());
         }
         return basefolder;
+    }
+
+    static private URL getResource(String resource) {
+        ClassLoader classLoader = null;
+        URL url = null;
+
+        //get the class loader out of this class
+        classLoader = ContentLibUtil.class.getClassLoader();
+        if (classLoader != null) {
+            url = classLoader.getResource(resource);
+            if (url != null) {
+                return url;
+            }
+        }
+
+        // use system class loader
+        return ClassLoader.getSystemResource(resource);
     }
 }

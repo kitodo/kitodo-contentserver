@@ -29,8 +29,6 @@ import java.io.File;
 import java.net.URISyntaxException;
 import java.net.URL;
 
-import org.apache.log4j.helpers.Loader;
-
 public class Util {
 
     /************************************************************************************
@@ -40,8 +38,7 @@ public class Util {
      ************************************************************************************/
     public static File getBaseFolderAsFile() {
         File basefolder;
-        // TODO: GDZ: Do we really need to depend on Log4J here? I don't think so...
-        URL url = Loader.getResource("");
+        URL url = getResource("");
 
         if (!url.getProtocol().startsWith("file")) {
             return new File(".");
@@ -53,6 +50,23 @@ public class Util {
             basefolder = new File(url.getPath());
         }
         return basefolder;
+    }
+
+    static private URL getResource(String resource) {
+        ClassLoader classLoader = null;
+        URL url = null;
+
+        //get the class loader out of this class
+        classLoader = Util.class.getClassLoader();
+        if (classLoader != null) {
+            url = classLoader.getResource(resource);
+            if (url != null) {
+                return url;
+            }
+        }
+
+        // use system class loader
+        return ClassLoader.getSystemResource(resource);
     }
 
 }

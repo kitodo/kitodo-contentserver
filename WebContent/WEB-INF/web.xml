@@ -20,7 +20,7 @@
         <display-name>GoobiContentServer</display-name>
         <servlet-name>GoobiContentServer</servlet-name>
         <servlet-class>
-            org.goobi.presentation.contentServlet.controller.GoobiContentServer
+            org.goobi.presentation.contentservlet.controller.GoobiContentServer
         </servlet-class>
     </servlet>
 

@@ -17,6 +17,7 @@
     <property name="dist.dir" value="dist" />
 
     <property name="jarfile" value="${build.dist.name}-${build.dist.version}.jar" />
+    <property name="warfile" value="${build.dist.name}-${build.dist.version}.war" />
     <property name="dir.lib" value="${basedir}/WebContent/WEB-INF/lib" />
 
     <property name="src.dir" value="${basedir}/src" />
@@ -31,7 +32,7 @@
         <pathelement path="${java.class.path}" />
     </path>
 
-    <target name="all" depends="jar" />
+    <target name="all" depends="war" />
 
     <target name="clean">
         <delete dir="${build.dir}" />
@@ -101,4 +102,11 @@
         </jar>
     </target>
 
+    <target name="war" depends="jar">
+        <war destfile="${dist.dir}/${warfile}" webxml="WebContent/WEB-INF/web.xml">
+            <fileset dir="WebContent"/>
+            <lib dir="${dir.lib}"/>
+            <classes dir="${build.dir}"/>
+        </war>
+    </target>
 </project>
